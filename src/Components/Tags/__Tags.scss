@@ -1,0 +1,33 @@
+.tagsList {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+
+  .tagsItems {
+    margin: 15px 15px 0px 0px;
+    background-color: #ff6060;
+    color: #ffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 985px) {
+  .tagsList {
+    .tagsItems {
+      margin-bottom: 10px;
+      width: 120px;
+      height: 35px;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+  }
+}

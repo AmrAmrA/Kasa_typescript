@@ -1,0 +1,16 @@
+.background__about {
+  border-radius: 25px;
+  mix-blend-mode: darken;
+  width: 90%;
+  height: 233px;
+  display: block;
+  margin: 30px auto 0px auto;
+}
+
+@media screen and (max-width: 550px) {
+  .background__about {
+    height: 300px;
+    object-fit: cover;
+    object-position: right;
+  }
+}

@@ -1,0 +1,68 @@
+.slider {
+  position: relative;
+  margin: auto;
+}
+.centralImage {
+  max-width: 1300px;
+  width: 90vw;
+  display: block;
+  margin: 0 auto;
+  height: 415px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+// The arrows that allow us to move between the images
+.arrow {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  cursor: pointer;
+  top: 43%;
+}
+.right__arrow {
+  right: 120px;
+}
+
+.left__arrow {
+  left: 120px;
+}
+
+// Little Animation when we load a new image while clicking on arrows
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+// Displays one image and hides the other images in the slider
+.slide.active {
+  opacity: 1;
+}
+// Shows the number of the image we are on in relation to the whole slider
+.slide__number {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  right: 50%;
+  color: white;
+  font-size: 20px;
+}
+// Responsive for small screens
+@media screen and (max-width: 985px) {
+  .arrow {
+    width: 20px;
+    height: 30px;
+  }
+
+  .right__arrow {
+    right: 50px;
+  }
+
+  .left__arrow {
+    left: 50px;
+  }
+
+  .centralImage {
+    height: 270px;
+    border-radius: 10px;
+  }
+}
