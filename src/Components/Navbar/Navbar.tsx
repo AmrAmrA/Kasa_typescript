@@ -1,7 +1,10 @@
-import React from "react";
 import "./__Navbar.scss";
 import { NavLink } from "react-router-dom";
 import logoKasa from "./logo.png";
+
+interface navLinkProps {
+  isActive : boolean; 
+}
 
 export default function Navbar() {
   /* Class to toggle to add an underline 
@@ -25,7 +28,7 @@ export default function Navbar() {
               end
               to="/"
               // Ternary to toggle the underline style on the current link of our application
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
+              className={({ isActive } : navLinkProps) => (isActive ? activeLink : normalLink)}
             >
               Accueil
             </NavLink>
@@ -34,7 +37,7 @@ export default function Navbar() {
             <NavLink
               end
               to="/apropos"
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
+              className={({ isActive } : navLinkProps) => (isActive ? activeLink : normalLink)}
             >
               A propos
             </NavLink>

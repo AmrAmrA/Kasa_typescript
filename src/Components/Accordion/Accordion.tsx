@@ -4,7 +4,7 @@ import { useState } from "react";
 import Accordion__icon from "../Accordion/chevron.png";
 interface AccordionProps {
   title: string;
-  content: string;
+  content: React.ReactNode;
 }
 
 function Accordion({ title, content }: AccordionProps) {

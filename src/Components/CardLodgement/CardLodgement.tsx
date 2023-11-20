@@ -1,11 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import LodgmentData from "../../logements.json";
 import "./__cardLodgement.scss";
-// interface CardLodgementPropos {
-//   card : object, 
-//   index : number
-// }
 interface Lodgement {
   id: string;
   title: string;
@@ -21,7 +16,7 @@ export default function CardLodgement() {
             <div className="box">
               <img src={card.cover} alt={card.title} className="box__cover" />
               <h2 className="box__title">{card.title}</h2>
-              <div className="box__filter"></div>
+              <div className="box__filter" />
             </div>
           </Link>
         </article>

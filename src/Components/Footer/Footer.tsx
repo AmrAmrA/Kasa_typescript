@@ -1,4 +1,3 @@
-import React from "react";
 import "./__Footer.scss";
 import logoFooter from "./logo__footer.png";
 import { Link } from "react-router-dom";
