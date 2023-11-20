@@ -1,31 +1,38 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import greyStar from "./greyStar.png";
 import redStar from "./redStar.png";
 import LodgmentData from "../../logements.json";
 import "./__StarsRating.scss";
 
+interface RouteParams {
+  id: string;
+}
+
+interface Card {
+  id: string;
+  rating: number;
+}
+
 export default function StarsRating() {
-  const params = useParams();
-  // Number of stars to compare with our stars array from JSON Data
+  const params = useParams() as any as RouteParams;
   const starsArray = [1, 2, 3, 4, 5];
+
+  const currentCard = LodgmentData.find((card: Card) => card.id === params.id);
+
+  if (!currentCard) {
+    return <div>Logement introuvable.</div>;
+  }
+
   return (
-    <>
-      {LodgmentData.filter((card) => card.id === params.id).map(
-        (card, index) => (
-          <div className="starsList" key={index}>
-            {starsArray.map((index) => (
-              <img
-                alt="Nombre d'étoiles pour évaluer la qualité du logement"
-                className="star"
-                key={index}
-                // A ternary to present the number of red stars according to the stars that come from the Json file
-                src={index <= card.rating ? redStar : greyStar}
-              />
-            ))}
-          </div>
-        )
-      )}
-    </>
+    <div className="starsList">
+      {starsArray.map((starIndex) => (
+        <img
+          alt="Nombre d'étoiles pour évaluer la qualité du logement"
+          className="star"
+          key={starIndex}
+          src={starIndex <= currentCard.rating ? redStar : greyStar}
+        />
+      ))}
+    </div>
   );
 }
