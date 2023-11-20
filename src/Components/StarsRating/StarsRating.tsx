@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import greyStar from "./greyStar.png";
 import redStar from "./redStar.png";
-import LodgmentData from "../../logements";
+import LodgmentData from "../../logements.json";
 import "./__StarsRating.scss";
 
 export default function StarsRating() {

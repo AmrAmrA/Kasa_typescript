@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import LodgmentData from "../../logements";
+import LodgmentData from "../../logements.json";
 import "./__Host.scss";
 
 

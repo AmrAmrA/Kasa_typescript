@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import LodgmentData from '../../logements'
+import LodgmentData from '../../logements.json'
 import leftArrow from "./leftArrow.png";
 import rightArrow from "./rightArrow.png";
 import "./__Slider.scss";
@@ -12,11 +12,11 @@ export default function Slider() {
 
   // A ternary: we are on the last image? Let's go back to the first image
   // otherwise continue to go to a more upper image in the slider
-  const nextSlide = (length) => {
+  const nextSlide = (length : number ) => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  const prevSlide = (length) => {
+  const prevSlide = (length : number) => {
     // A ternary: we are on the first image? Let's go to the last image of the slider
     // otherwise let's go back
     setCurrent(current === 0 ? length - 1 : current - 1);

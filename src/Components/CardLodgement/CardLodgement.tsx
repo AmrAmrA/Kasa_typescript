@@ -1,13 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LodgmentData from "../../logements";
+import LodgmentData from "../../logements.json";
 import "./__cardLodgement.scss";
+// interface CardLodgementPropos {
+//   card : object, 
+//   index : number
+// }
+interface Lodgement {
+  id: string;
+  title: string;
+  cover: string;
+}
+
 export default function CardLodgement() {
   return (
     <section className="lodgementContainer">
-      {LodgmentData.map((card, index) => (
-        <article key = {index} >
-          <Link to ={`/logements/${card.id}`}>
+      {LodgmentData.map((card: Lodgement) => (
+        <article key={card.id}>
+          <Link to={`/logements/${card.id}`}>
             <div className="box">
               <img src={card.cover} alt={card.title} className="box__cover" />
               <h2 className="box__title">{card.title}</h2>

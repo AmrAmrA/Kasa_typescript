@@ -1,7 +1,7 @@
 import React from "react";
 import "./__Accordion.scss";
 import { useState } from "react";
-import Accordion__icon from "./chevron.png";
+import Accordion__icon from "../Accordion/chevron.png";
 interface AccordionProps {
   title: string;
   content: string;

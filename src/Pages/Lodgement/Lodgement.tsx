@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import LodgmentData from "../../logements";
+import LodgmentData from "../../logements.json";
 import Slider from "../../Components/Slider/Slider";
 import StarsRating from "../../Components/StarsRating/StarsRating";
 import Tags from "../../Components/Tags/Tags";
